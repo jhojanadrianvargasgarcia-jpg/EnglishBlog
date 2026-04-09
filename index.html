@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" type="image/png" href="img/icono.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnglishBlog </title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo" onclick="showPage('home')">
+      English<span>Blog</span>
+    </div>
+    <div class="nav-links">
+      <button class="nav-btn" data-page="history" onclick="showPage('history')" data-es="📜 Historia" data-en="📜 History">📜 Historia</button>
+      <button class="nav-btn" data-page="topics" onclick="showPage('topics')" data-es="📚 Temas" data-en="📚 Topics">📚 Temas</button>
+      <button class="nav-btn" data-page="quiz-home" onclick="showPage('quiz-home')" data-es="🎯 Quiz" data-en="🎯 Quiz">🎯 Quiz</button>
+      <button class="nav-btn" data-page="references" onclick="showPage('references')" data-es="🔗 Referencias" data-en="🔗 References">🔗 Referencias</button>
+      <button class="lang-btn" onclick="toggleLang()" id="langBtn">🌐 EN</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button onclick="showPage('history'); toggleMenu()" data-es="📜 Historia del Inglés" data-en="📜 History of English">📜 Historia del Inglés</button>
+    <button onclick="showPage('topics'); toggleMenu()" data-es="📚 Temas" data-en="📚 Topics">📚 Temas</button>
+    <button onclick="showPage('quiz-home'); toggleMenu()" data-es="🎯 Quiz" data-en="🎯 Quiz">🎯 Quiz</button>
+    <button onclick="showPage('references'); toggleMenu()" data-es="🔗 Referencias" data-en="🔗 References">🔗 Referencias</button>
+    <button onclick="toggleLang()" data-es="🌐 Cambiar a Inglés" data-en="🌐 Switch to Spanish">🌐 Cambiar a Inglés</button>
+  </div>
+
+  <!-- ═══════════════ PAGE: HOME ═══════════════ -->
+  <div id="page-home" class="page active">
+    <div class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <!-- Tag pill -->
+        <div class="hero-tag" data-es="✦ Aprende aqui " data-en="✦ Learn Here">✦ Learn Here </div>
+
+        <!-- Central card (big rounded rect like the sketch) -->
+        <div class="hero-main-card">
+          <h1 data-es="Bienvenido a tu Blog de <em>Inglés</em>" data-en="Welcome to your English <em>Blog</em>">Bienvenido a tu Blog de <em>Inglés</em></h1>
+          <p data-es="Explora la historia, aprende los temas esenciales y pon a prueba tu conocimiento con quizzes interactivos." data-en="Explore the history, learn the essential topics and test your knowledge with interactive quizzes.">
+            Explora la historia, aprende los temas esenciales y pon a prueba tu conocimiento con quizzes interactivos.
+          </p>
+          <div class="hero-btns">
+            <button class="cta-btn" onclick="showPage('topics')" data-es="Empezar →" data-en="Start now →">Empezar →</button>
+            
+          </div>
+        </div>
+
+        <!-- cartas -->
+        <div class="hero-cards">
+          <div class="hero-card" onclick="showPage('history')">
+            <div class="icon">📜</div>
+            <div class="label" data-es="Historia del Inglés" data-en="History of English">Historia del Inglés</div>
+            
+          </div>
+          <div class="hero-card" onclick="showPage('topics')">
+            <div class="icon">📚</div>
+            <div class="label" data-es=" Temas" data-en=" Topics"> Temas</div>
+            
+          </div>
+          <div class="hero-card" onclick="showPage('quiz-home')">
+            <div class="icon">🎯</div>
+            <div class="label" data-es="Quiz Interactivo" data-en="Interactive Quiz">Quiz Interactivo</div>
+            
+          </div>
+          <div class="hero-card" onclick="showPage('references')">
+            <div class="icon">🔗</div>
+            <div class="label" data-es="Referencias" data-en="References">Referencias</div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PAGE: HISTORY ═══════════════ -->
+  <div id="page-history" class="page">
+    <div class="page-hero-banner history-banner">
+      <div class="banner-content">
+        <span class="section-tag" data-es="📜 Historia" data-en="📜 History">📜 Historia</span>
+        <h1 class="section-title" data-es="Historia del <span>Inglés</span>" data-en="History of <span>English</span>">Historia del <span>Inglés</span></h1>
+        <p class="section-sub" data-es="Un viaje de más de 1,500 años desde las tribus germánicas hasta el idioma global más hablado del mundo." data-en="A journey of more than 1,500 years from Germanic tribes to the most spoken global language in the world.">
+          Un viaje de más de 1,500 años desde las tribus germánicas hasta el idioma global más hablado del mundo.
+        </p>
+      </div>
+      
+        
+      
+    </div>
+
+    <div class="content-wrap">
+      <h2 class="subsection-title" data-es="⏳ Línea del Tiempo" data-en="⏳ Timeline">⏳ Línea del Tiempo</h2>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot" style="border-color:#4caf7d">🏰</div></div>
+          <div class="tl-content">
+            <div class="tl-era" data-es="450 – 1100 d.C." data-en="450 – 1100 AD">450 – 1100 d.C.</div>
+            <h3 data-es="Inglés Antiguo (Old English)" data-en="Old English">Inglés Antiguo (Old English)</h3>
+            <p data-es="También conocido como <strong>Anglo-Saxon</strong>, surgió cuando las tribus germánicas (Anglos, Sajones y Jutos) invadieron Gran Bretaña. Era un idioma muy diferente al inglés moderno, con una gramática muy compleja. La obra más famosa de esta época es <em>Beowulf</em>." data-en="Also known as <strong>Anglo-Saxon</strong>, it emerged when Germanic tribes (Angles, Saxons and Jutes) invaded Britain. It was very different from modern English, with a highly complex grammar. The most famous work from this era is <em>Beowulf</em>.">
+              También conocido como <strong>Anglo-Saxon</strong>, surgió cuando las tribus germánicas (Anglos, Sajones y Jutos) invadieron Gran Bretaña. Era un idioma muy diferente al inglés moderno. La obra más famosa de esta época es <em>Beowulf</em>.
+            </p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot" style="border-color:#81c784">⚔️</div></div>
+          <div class="tl-content">
+            <div class="tl-era" data-es="1100 – 1500 d.C." data-en="1100 – 1500 AD">1100 – 1500 d.C.</div>
+            <h3 data-es="Inglés Medio (Middle English)" data-en="Middle English">Inglés Medio (Middle English)</h3>
+            <p data-es="La conquista normanda de 1066 trajo miles de palabras del <strong>francés antiguo</strong> al inglés. Geoffrey Chaucer escribió <em>The Canterbury Tales</em> en esta era." data-en="The Norman conquest of 1066 brought thousands of words from <strong>Old French</strong> into English. Geoffrey Chaucer wrote <em>The Canterbury Tales</em> in this era.">
+              La conquista normanda de 1066 trajo miles de palabras del <strong>francés antiguo</strong> al inglés. Geoffrey Chaucer escribió <em>The Canterbury Tales</em> en esta era.
+            </p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot" style="border-color:#a5d6a7">🎭</div></div>
+          <div class="tl-content">
+            <div class="tl-era" data-es="1500 – 1700 d.C." data-en="1500 – 1700 AD">1500 – 1700 d.C.</div>
+            <h3 data-es="Inglés Moderno Temprano" data-en="Early Modern English">Inglés Moderno Temprano</h3>
+            <p data-es="La imprenta estandarizó la ortografía. Shakespeare enriqueció el vocabulario con miles de nuevas palabras. La Biblia King James (1611) tuvo un impacto cultural enorme." data-en="The printing press standardized spelling. Shakespeare enriched vocabulary with thousands of new words. The King James Bible (1611) had an enormous cultural impact.">
+              La imprenta estandarizó la ortografía. Shakespeare enriqueció el vocabulario con miles de nuevas palabras. La Biblia King James (1611) tuvo un impacto cultural enorme.
+            </p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot" style="border-color:#c8e6c9">🌍</div></div>
+          <div class="tl-content">
+            <div class="tl-era" data-es="1700 – Presente" data-en="1700 – Present">1700 – Presente</div>
+            <h3 data-es="Inglés Moderno y Contemporáneo" data-en="Modern and Contemporary English">Inglés Moderno y Contemporáneo</h3>
+            <p data-es="Con el Imperio Británico y la Revolución Industrial el inglés se expandió globalmente. Hoy más de <strong>1,500 millones</strong> de personas hablan inglés en algún nivel." data-en="With the British Empire and the Industrial Revolution, English expanded globally. Today more than <strong>1.5 billion</strong> people speak English at some level.">
+              Con el Imperio Británico y la Revolución Industrial el inglés se expandió globalmente. Hoy más de <strong>1,500 millones</strong> de personas hablan inglés en algún nivel.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Videos Section -->
+      <h2 class="subsection-title" data-es="🎬 Videos Recomendados" data-en="🎬 Recommended Videos">🎬 Videos Recomendados</h2>
+      <div class="video-grid">
+        <a class="video-card" href="https://www.youtube.com/watch?v=H3r9bOkYW9s" target="_blank">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/H3r9bOkYW9s/hqdefault.jpg" alt="History of English" />
+            <div class="play-overlay"><div class="play-btn">▶</div></div>
+          </div>
+          <div class="video-info">
+            <h4>The History of English in 10 Minutes</h4>
+            <p>Open University</p>
+          </div>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=YEaSxhcns7Y" target="_blank">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/YEaSxhcns7Y/hqdefault.jpg" alt="Old English" />
+            <div class="play-overlay"><div class="play-btn">▶</div></div>
+          </div>
+          <div class="video-info">
+            <h4>Old English — How Different Was It?</h4>
+            <p>Langfocus</p>
+          </div>
+        </a>
+        
+      </div>
+
+      <!-- History Quiz -->
+      <h2 class="subsection-title" data-es="🧠 Preguntas de Historia" data-en="🧠 History Questions">🧠 Preguntas de Historia</h2>
+      <div id="history-quiz-container"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PAGE: TOPICS MENU ═══════════════ -->
+  <div id="page-topics" class="page">
+    <div class="page-inner">
+      <div class="section-header-block">
+        <span class="section-tag" data-es="📚 Temas" data-en="📚 Topics">📚 Temas</span>
+        <h1 class="section-title" data-es="Selecciona un <span>Tema</span>" data-en="Select a <span>Topic</span>">Selecciona un <span>Tema</span></h1>
+        <p class="section-sub" data-es="Aqui podras encontrar los 12 temas vistos en las anteriores clases. Ademas, podras ver ejemplos dependiendo de la tematica y por ultimo podras realizar pequeños quizzes." data-en="Here you will find the 12 topics covered in previous classes. In addition, you will find examples for each topic, and finally, you can take short quizzes.">
+          Aqui podras encontrar los 12 temas vistos en las anteriores clases. Ademas, podras ver ejemplos dependiendo de la tematica y por ultimo podras realizar pequeños quizzes.
+        </p>
+      </div>
+      <div class="topics-grid" id="topics-grid"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PAGE: TOPIC DETAIL ═══════════════ -->
+  <div id="page-topic-detail" class="page">
+    <div class="topic-detail-header">
+      <button class="back-btn" onclick="showPage('topics')" data-es="← Volver a Temas" data-en="← Back to Topics">← Volver a Temas</button>
+      <div id="topic-detail-content"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PAGE: QUIZ HOME ═══════════════ -->
+  <div id="page-quiz-home" class="page">
+    <div class="quiz-landing">
+      <div class="quiz-landing-inner">
+        <div class="quiz-icon-big">🎯</div>
+        <span class="section-tag" data-es="Quiz Interactivo" data-en="Interactive Quiz">Quiz Interactivo</span>
+        <h1 class="section-title" data-es="Pon a prueba tus <span>Conocimientos</span>" data-en="Test your <span>Knowledge</span>">Pon a prueba tus <span>Conocimientos</span></h1>
+        <p class="section-sub" data-es="Aqui podras poner a prueba tus conocimientos, ten en cuenta el tiempo, responde en el menor tiempo posible." data-en="Here you can test your knowledge, keep the time in mind, answer in the shortest time possible.">
+          Aquí podrás poner a prueba tus conocimientos, ten en cuenta el tiempo, responde en el menor tiempo posible.
+        </p>
+        <div class="quiz-info-cards">
+          <div class="qi-card"><div class="qi-icon">❓</div><div class="qi-label" data-es="20 Preguntas" data-en="20 Questions">20 Preguntas</div></div>
+          <div class="qi-card"><div class="qi-icon">⏱️</div><div class="qi-label" data-es="Tiempo medido" data-en="Timed">Tiempo medido</div></div>
+          <div class="qi-card"><div class="qi-icon">📊</div><div class="qi-label" data-es="Puntaje final" data-en="Final score">Puntaje final</div></div>
+        </div>
+        <button class="cta-btn big-btn" onclick="startQuiz()" data-es="▶ Iniciar" data-en="▶ Start">▶ Iniciar </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PAGE: QUIZ PLAYING ═══════════════ -->
+  <div id="page-quiz-play" class="page">
+    <div class="quiz-play-wrap">
+      <div class="quiz-topbar">
+        <div class="quiz-progress-info">
+          <span id="q-counter">Question 1 / 20</span>
+          <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+        </div>
+        <div class="quiz-timer" id="quizTimer">⏱ 00:00</div>
+      </div>
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-question" id="quizQuestion"></div>
+        <div class="quiz-options" id="quizOptions"></div>
+        <button class="next-btn" id="nextBtn" onclick="nextQuestion()" style="display:none" data-es="Siguiente →" data-en="Next →">Siguiente →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PAGE: QUIZ RESULTS ═══════════════ -->
+  <div id="page-quiz-results" class="page">
+    <div class="results-wrap">
+      <div class="results-card">
+        <div class="results-emoji" id="resultsEmoji">🏆</div>
+        <h2 id="resultsTitle">Excellent!</h2>
+        <div class="results-score" id="resultsScore">18 / 20</div>
+        <div class="results-stats">
+          <div class="r-stat"><span id="r-correct">18</span><small data-es="Correctas" data-en="Correct">Correctas</small></div>
+          <div class="r-stat"><span id="r-wrong">2</span><small data-es="Incorrectas" data-en="Wrong">Incorrectas</small></div>
+          <div class="r-stat"><span id="r-time">02:35</span><small data-es="Tiempo" data-en="Time">Tiempo</small></div>
+          <div class="r-stat"><span id="r-pct">90%</span><small data-es="Porcentaje" data-en="Percentage">Porcentaje</small></div>
+        </div>
+        <div class="results-bar-wrap"><div class="results-bar-fill" id="resultsBar"></div></div>
+        <p id="resultsMsg" class="results-msg"></p>
+        <div class="results-btns">
+          <button class="cta-btn" onclick="restartQuiz()" data-es="🔄 Jugar de nuevo" data-en="🔄 Play again">🔄 Jugar de nuevo</button>
+          <button class="cta-btn-outline" onclick="showPage('topics')" data-es="📚 Ver Temas" data-en="📚 See Topics">📚 Ver Temas</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PAGE: REFERENCES ═══════════════ -->
+  <div id="page-references" class="page">
+    <div class="page-inner">
+      <div class="section-header-block">
+        <span class="section-tag" data-es="🔗 Referencias" data-en="🔗 References">🔗 Referencias</span>
+        <h1 class="section-title" data-es="Canales de <span>YouTube</span>" data-en="<span>YouTube</span> Channels">Canales de <span>YouTube</span></h1>
+        <p class="section-sub" data-es="Aqui encontraras canales de youtube que sirven como complemento para el aprendizaje de ingles." data-en="Here you will find YouTube channels that serve as a complement to learning English.">
+          Aqui encontraras canales de youtube que sirven como complemento para el aprendizaje de ingles.
+        </p>
+      </div>
+
+      <div class="ref-grid">
+        <a class="ref-card link-card" href="https://www.youtube.com/@EnglishwithLucy" target="_blank">
+          <div class="ref-icon">▶️</div>
+          <div class="ref-info">
+            <h4>English with Lucy</h4>
+            <p data-es="Pronunciación, gramática y vocabulario con explicaciones claras y entretenidas." data-en="Pronunciation, grammar and vocabulary with clear and entertaining explanations.">Pronunciación, gramática y vocabulario con explicaciones claras y entretenidas.</p>
+            <span class="ref-tag link-tag" data-es="Ver canal →" data-en="Visit channel →">Ver canal →</span>
+          </div>
+        </a>
+        
+        <a class="ref-card link-card" href="https://www.youtube.com/@Langfocus" target="_blank">
+          <div class="ref-icon">▶️</div>
+          <div class="ref-info">
+            <h4>Langfocus</h4>
+            <p data-es="Análisis lingüístico profundo del inglés y otros idiomas del mundo." data-en="Deep linguistic analysis of English and other world languages.">Análisis lingüístico profundo del inglés y otros idiomas del mundo.</p>
+            <span class="ref-tag link-tag" data-es="Ver canal →" data-en="Visit channel →">Ver canal →</span>
+          </div>
+        </a>
+        
+        <a class="ref-card link-card" href="https://www.youtube.com/@engvid" target="_blank">
+          <div class="ref-icon">▶️</div>
+          <div class="ref-info">
+            <h4>engVid</h4>
+            <p data-es="Lecciones gratuitas de inglés con múltiples profesores nativos para todos los niveles." data-en="Free English lessons with multiple native teachers for all levels.">Lecciones gratuitas de inglés con múltiples profesores nativos para todos los niveles.</p>
+            <span class="ref-tag link-tag" data-es="Ver canal →" data-en="Visit channel →">Ver canal →</span>
+          </div>
+        </a>
+        <a class="ref-card link-card" href="https://www.youtube.com/@EnglishAddict" target="_blank">
+          <div class="ref-icon">▶️</div>
+          <div class="ref-info">
+            <h4>English Addict with Mr Steve</h4>
+            <p data-es="Clases en vivo con vocabulario cotidiano y frases idiomáticas del inglés real." data-en="Live classes with everyday vocabulary and idiomatic phrases from real English.">Clases en vivo con vocabulario cotidiano y frases idiomáticas del inglés real.</p>
+            <span class="ref-tag link-tag" data-es="Ver canal →" data-en="Visit channel →">Ver canal →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
