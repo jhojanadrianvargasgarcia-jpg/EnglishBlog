@@ -1,16 +1,12 @@
-/* ═══════════════════════════════════════════════
-   EnglishWorld — script.js  (v2)
-   12 topics from PDF · EN/ES toggle · Quiz engine
-═══════════════════════════════════════════════ */
 
-// ══════════════════════════════
-// 1. LANGUAGE SYSTEM
-// ══════════════════════════════
 let currentLang = 'es';
 
 function toggleLang() {
   currentLang = currentLang === 'es' ? 'en' : 'es';
-  document.getElementById('langBtn').textContent = currentLang === 'es' ? '🌐 EN' : '🌐 ES';
+  const label = currentLang === 'es' ? '🌐 EN' : '🌐 ES';
+  document.getElementById('langBtn').textContent = label;
+  const homeBtn = document.getElementById('langBtnHome');
+  if (homeBtn) homeBtn.textContent = label;
   applyLang();
 }
 
@@ -47,9 +43,7 @@ function applyLang() {
   }
 }
 
-// ══════════════════════════════
-// UI TEXT STRINGS (bilingual)
-// ══════════════════════════════
+
 const ui = {
   es: {
     topic: 'TEMA',
@@ -93,9 +87,7 @@ const ui = {
   }
 };
 
-// ══════════════════════════════
-// 2. NAVIGATION
-// ══════════════════════════════
+
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const target = document.getElementById('page-' + pageId);
@@ -116,9 +108,7 @@ function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
 
-// ══════════════════════════════
-// 3. TOPICS DATA (12 topics from PDF)
-// ══════════════════════════════
+
 const topics = [
   {
     id: 1, icon: '📄', name: 'Articles (a, an, the)', name_es: 'Artículos (a, an, the)', level: 'basic',
@@ -723,12 +713,84 @@ const topics = [
       { q: 'What does "boil" mean?', q_es: '¿Qué significa "boil"?', opts: ['a) freír','b) hervir','c) cortar','d) mezclar'], ans: 1 },
       { q: 'Choose the correct sentence:', q_es: 'Elige la oración correcta:', opts: ['a) I mix the ingredients','b) I ingredients mix','c) I mixing ingredients','d) I mix ingredients the'], ans: 0 },
     ]
+  },
+  {
+    id: 13, icon: '👉', name: 'Demonstratives', name_es: 'Demostrativos', level: 'basic',
+    content: `
+      <p><strong>Demonstratives</strong> are words used to point to or identify specific nouns — people, places, or things — based on how near or far they are from the speaker.</p>
+      <h3>What are they used for?</h3>
+      <ul>
+        <li>Point to something near or far</li>
+        <li>Identify singular or plural nouns</li>
+        <li>Avoid repeating a noun</li>
+      </ul>
+      <h3>The four demonstratives</h3>
+      <table class="td-table">
+        <tr><th></th><th>Singular</th><th>Plural</th></tr>
+        <tr><td><strong>Near</strong></td><td>This</td><td>These</td></tr>
+        <tr><td><strong>Far</strong></td><td>That</td><td>Those</td></tr>
+      </table>
+      <h3>Structure</h3>
+      <p><strong>Demonstrative + noun:</strong> This book · These books · That car · Those cars</p>
+      <p><strong>Demonstrative alone (as pronoun):</strong> This is my friend · Those are my shoes</p>
+      <h3>Each demonstrative explained</h3>
+      <ul>
+        <li><strong>This</strong> — singular, near: <em>This is my pen.</em></li>
+        <li><strong>These</strong> — plural, near: <em>These are my books.</em></li>
+        <li><strong>That</strong> — singular, far: <em>That is a big tree.</em></li>
+        <li><strong>Those</strong> — plural, far: <em>Those are beautiful flowers.</em></li>
+      </ul>
+      <h3>Important</h3>
+      <ul>
+        <li>Use <strong>this / these</strong> for things close to you</li>
+        <li>Use <strong>that / those</strong> for things far from you</li>
+        <li>This / That → singular · These / Those → plural</li>
+      </ul>`,
+    content_es: `
+      <p>Los <strong>demostrativos</strong> son palabras que se usan para señalar o identificar sustantivos específicos — personas, lugares o cosas — según qué tan cerca o lejos están del hablante.</p>
+      <h3>¿Para qué se usan?</h3>
+      <ul>
+        <li>Señalar algo cercano o lejano</li>
+        <li>Identificar sustantivos en singular o plural</li>
+        <li>Evitar repetir un sustantivo</li>
+      </ul>
+      <h3>Los cuatro demostrativos</h3>
+      <table class="td-table">
+        <tr><th></th><th>Singular</th><th>Plural</th></tr>
+        <tr><td><strong>Cerca</strong></td><td>This (este/esta/esto)</td><td>These (estos/estas)</td></tr>
+        <tr><td><strong>Lejos</strong></td><td>That (ese/esa/aquel)</td><td>Those (esos/esas/aquellos)</td></tr>
+      </table>
+      <h3>Estructura</h3>
+      <p><strong>Demostrativo + sustantivo:</strong> This book (este libro) · These books (estos libros) · That car (ese carro) · Those cars (esos carros)</p>
+      <p><strong>Demostrativo solo (como pronombre):</strong> This is my friend (Este es mi amigo) · Those are my shoes (Esos son mis zapatos)</p>
+      <h3>Cada demostrativo explicado</h3>
+      <ul>
+        <li><strong>This</strong> — singular, cerca: <em>This is my pen.</em> (Este es mi bolígrafo)</li>
+        <li><strong>These</strong> — plural, cerca: <em>These are my books.</em> (Estos son mis libros)</li>
+        <li><strong>That</strong> — singular, lejos: <em>That is a big tree.</em> (Ese es un árbol grande)</li>
+        <li><strong>Those</strong> — plural, lejos: <em>Those are beautiful flowers.</em> (Esas son flores hermosas)</li>
+      </ul>
+      <h3>Importante</h3>
+      <ul>
+        <li>Usa <strong>this / these</strong> para cosas cercanas a ti</li>
+        <li>Usa <strong>that / those</strong> para cosas lejanas a ti</li>
+        <li>This / That → singular · These / Those → plural</li>
+      </ul>`,
+    examples: [
+      { en: 'This is my book.', es: 'Este es mi libro.' },
+      { en: 'These are my friends.', es: 'Estos son mis amigos.' },
+      { en: 'That car is very fast.', es: 'Ese carro es muy rápido.' },
+      { en: 'Those flowers are beautiful.', es: 'Esas flores son hermosas.' },
+    ],
+    quiz: [
+      { q: 'Which demonstrative is used for something near and singular?', q_es: '¿Qué demostrativo se usa para algo cercano y singular?', opts: ['a) That','b) Those','c) These','d) This'], ans: 3 },
+      { q: 'Which demonstrative is used for something far and plural?', q_es: '¿Qué demostrativo se usa para algo lejano y plural?', opts: ['a) This','b) These','c) Those','d) That'], ans: 2 },
+      { q: 'Choose the correct sentence:', q_es: 'Elige la oración correcta:', opts: ['a) These is my pen','b) This are my pens','c) These are my pens','d) Those is my pen'], ans: 2 },
+    ]
   }
 ];
 
-// ══════════════════════════════
-// 4. RENDER TOPICS GRID
-// ══════════════════════════════
+
 function renderTopicsGrid() {
   const grid = document.getElementById('topics-grid');
   if (!grid || grid.dataset.rendered) return;
@@ -750,9 +812,7 @@ function renderTopicsGrid() {
   });
 }
 
-// ══════════════════════════════
-// 5. OPEN TOPIC DETAIL
-// ══════════════════════════════
+
 let topicQuizState = {};
 
 function openTopic(topicId, noReset) {
@@ -860,9 +920,7 @@ function resetTopicQuiz(topicId) {
   renderTopicQuizQuestion(topicId);
 }
 
-// ══════════════════════════════
-// 6. HISTORY QUIZ
-// ══════════════════════════════
+
 const historyQuestions = [
   {
     q: 'In what year did the Normans conquer England, changing English forever?',
@@ -940,9 +998,7 @@ function answerHistory(qi, chosen) {
   fb.className = 'hq-feedback ' + (chosen === q.ans ? 'correct-fb' : '');
 }
 
-// ══════════════════════════════
-// 7. MAIN QUIZ ENGINE
-// ══════════════════════════════
+
 const quizAllQuestions = [
   { q: 'Which article goes before "umbrella"?', q_es: '¿Qué artículo va antes de "umbrella"?', opts: ['A) a','B) an','C) the','D) no article'], opts_es: ['A) a','B) an','C) the','D) ninguno'], ans: 1 },
   { q: 'Which pronoun replaces "Maria"?', q_es: '¿Qué pronombre reemplaza a "María"?', opts: ['A) He','B) It','C) She','D) They'], ans: 2 },
@@ -1047,7 +1103,5 @@ function formatTime(s) {
   return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
 }
 
-// ══════════════════════════════
-// 8. INIT
-// ══════════════════════════════
+
 document.addEventListener('DOMContentLoaded', () => { showPage('home'); applyLang(); });

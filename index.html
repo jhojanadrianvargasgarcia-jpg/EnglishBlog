@@ -10,16 +10,12 @@
 </head>
 <body>
 
-  <!-- ═══════════════ NAVBAR ═══════════════ -->
   <nav id="navbar">
     <div class="nav-logo" onclick="showPage('home')">
       English<span>Blog</span>
     </div>
     <div class="nav-links">
-      <button class="nav-btn" data-page="history" onclick="showPage('history')" data-es="📜 Historia" data-en="📜 History">📜 Historia</button>
-      <button class="nav-btn" data-page="topics" onclick="showPage('topics')" data-es="📚 Temas" data-en="📚 Topics">📚 Temas</button>
-      <button class="nav-btn" data-page="quiz-home" onclick="showPage('quiz-home')" data-es="🎯 Quiz" data-en="🎯 Quiz">🎯 Quiz</button>
-      <button class="nav-btn" data-page="references" onclick="showPage('references')" data-es="🔗 Referencias" data-en="🔗 References">🔗 Referencias</button>
+      <button class="nav-btn home-btn" onclick="showPage('home')" data-es="🏠 Inicio" data-en="🏠 Home">🏠 Inicio</button>
       <button class="lang-btn" onclick="toggleLang()" id="langBtn">🌐 EN</button>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()">☰</button>
@@ -27,62 +23,58 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
+    <button onclick="showPage('home'); toggleMenu()" data-es="🏠 Inicio" data-en="🏠 Home">🏠 Inicio</button>
     <button onclick="showPage('history'); toggleMenu()" data-es="📜 Historia del Inglés" data-en="📜 History of English">📜 Historia del Inglés</button>
     <button onclick="showPage('topics'); toggleMenu()" data-es="📚 Temas" data-en="📚 Topics">📚 Temas</button>
     <button onclick="showPage('quiz-home'); toggleMenu()" data-es="🎯 Quiz" data-en="🎯 Quiz">🎯 Quiz</button>
-    <button onclick="showPage('references'); toggleMenu()" data-es="🔗 Referencias" data-en="🔗 References">🔗 Referencias</button>
+    <button onclick="showPage('references'); toggleMenu()" data-es="🔗 Recomendaciones" data-en="🔗 Recommendations">🔗 Recomendaciones</button>
     <button onclick="toggleLang()" data-es="🌐 Cambiar a Inglés" data-en="🌐 Switch to Spanish">🌐 Cambiar a Inglés</button>
   </div>
 
-  <!-- ═══════════════ PAGE: HOME ═══════════════ -->
   <div id="page-home" class="page active">
     <div class="hero">
       <div class="hero-bg"></div>
       <div class="hero-grid"></div>
       <div class="hero-content">
-        <!-- Tag pill -->
-        <div class="hero-tag" data-es="✦ Aprende aqui " data-en="✦ Learn Here">✦ Learn Here </div>
+        <div class="hero-tag" data-es="✦ Aprende aquí" data-en="✦ Learn Here">✦ Aprende aquí</div>
 
-        <!-- Central card (big rounded rect like the sketch) -->
-        <div class="hero-main-card">
-          <h1 data-es="Bienvenido a tu Blog de <em>Inglés</em>" data-en="Welcome to your English <em>Blog</em>">Bienvenido a tu Blog de <em>Inglés</em></h1>
-          <p data-es="Explora la historia, aprende los temas esenciales y pon a prueba tu conocimiento con quizzes interactivos." data-en="Explore the history, learn the essential topics and test your knowledge with interactive quizzes.">
-            Explora la historia, aprende los temas esenciales y pon a prueba tu conocimiento con quizzes interactivos.
-          </p>
-          <div class="hero-btns">
-            <button class="cta-btn" onclick="showPage('topics')" data-es="Empezar →" data-en="Start now →">Empezar →</button>
-            
+        <div class="hero-main-layout">
+          <!-- Izquierda: tarjeta principal -->
+          <div class="hero-main-card">
+            <h1 data-es="Bienvenido a tu Blog de <em>Inglés</em>" data-en="Welcome to your English <em>Blog</em>">Bienvenido a tu Blog de <em>Inglés</em></h1>
+            <p data-es="Explora la historia, aprende los temas esenciales y pon a prueba tu conocimiento con quizzes interactivos." data-en="Explore the history, learn the essential topics and test your knowledge with interactive quizzes.">
+              Explora la historia, aprende los temas esenciales y pon a prueba tu conocimiento con quizzes interactivos.
+            </p>
+            <div class="hero-btns">
+              <button class="cta-btn" onclick="showPage('topics')" data-es="Empezar →" data-en="Start now →">Empezar →</button>
+            </div>
           </div>
-        </div>
 
-        <!-- cartas -->
-        <div class="hero-cards">
-          <div class="hero-card" onclick="showPage('history')">
-            <div class="icon">📜</div>
-            <div class="label" data-es="Historia del Inglés" data-en="History of English">Historia del Inglés</div>
-            
-          </div>
-          <div class="hero-card" onclick="showPage('topics')">
-            <div class="icon">📚</div>
-            <div class="label" data-es=" Temas" data-en=" Topics"> Temas</div>
-            
-          </div>
-          <div class="hero-card" onclick="showPage('quiz-home')">
-            <div class="icon">🎯</div>
-            <div class="label" data-es="Quiz Interactivo" data-en="Interactive Quiz">Quiz Interactivo</div>
-            
-          </div>
-          <div class="hero-card" onclick="showPage('references')">
-            <div class="icon">🔗</div>
-            <div class="label" data-es="Referencias" data-en="References">Referencias</div>
-            
+          <!-- Derecha: botones de navegación en columna -->
+          <div class="hero-side-cards">
+            <button class="hero-side-btn lang-side-btn" onclick="toggleLang()" id="langBtnHome">🌐 EN</button>
+            <button class="hero-side-btn" onclick="showPage('history')">
+              <span class="hsb-icon">📜</span>
+              <span class="hsb-label" data-es="Historia" data-en="History">Historia</span>
+            </button>
+            <button class="hero-side-btn" onclick="showPage('topics')">
+              <span class="hsb-icon">📚</span>
+              <span class="hsb-label" data-es="Temas" data-en="Topics">Temas</span>
+            </button>
+            <button class="hero-side-btn" onclick="showPage('quiz-home')">
+              <span class="hsb-icon">🎯</span>
+              <span class="hsb-label" data-es="Quiz" data-en="Quiz">Quiz</span>
+            </button>
+            <button class="hero-side-btn" onclick="showPage('references')">
+              <span class="hsb-icon">🔗</span>
+              <span class="hsb-label" data-es="Recomendados" data-en="Recommendations">Recomendados</span>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════ PAGE: HISTORY ═══════════════ -->
   <div id="page-history" class="page">
     <div class="page-hero-banner history-banner">
       <div class="banner-content">
@@ -179,7 +171,6 @@
     </div>
   </div>
 
-  <!-- ═══════════════ PAGE: TOPICS MENU ═══════════════ -->
   <div id="page-topics" class="page">
     <div class="page-inner">
       <div class="section-header-block">
@@ -193,7 +184,7 @@
     </div>
   </div>
 
-  <!-- ═══════════════ PAGE: TOPIC DETAIL ═══════════════ -->
+
   <div id="page-topic-detail" class="page">
     <div class="topic-detail-header">
       <button class="back-btn" onclick="showPage('topics')" data-es="← Volver a Temas" data-en="← Back to Topics">← Volver a Temas</button>
@@ -201,7 +192,6 @@
     </div>
   </div>
 
-  <!-- ═══════════════ PAGE: QUIZ HOME ═══════════════ -->
   <div id="page-quiz-home" class="page">
     <div class="quiz-landing">
       <div class="quiz-landing-inner">
@@ -221,7 +211,7 @@
     </div>
   </div>
 
-  <!-- ═══════════════ PAGE: QUIZ PLAYING ═══════════════ -->
+
   <div id="page-quiz-play" class="page">
     <div class="quiz-play-wrap">
       <div class="quiz-topbar">
@@ -239,7 +229,6 @@
     </div>
   </div>
 
-  <!-- ═══════════════ PAGE: QUIZ RESULTS ═══════════════ -->
   <div id="page-quiz-results" class="page">
     <div class="results-wrap">
       <div class="results-card">
@@ -262,18 +251,26 @@
     </div>
   </div>
 
-  <!-- ═══════════════ PAGE: REFERENCES ═══════════════ -->
   <div id="page-references" class="page">
     <div class="page-inner">
       <div class="section-header-block">
-        <span class="section-tag" data-es="🔗 Referencias" data-en="🔗 References">🔗 Referencias</span>
-        <h1 class="section-title" data-es="Canales de <span>YouTube</span>" data-en="<span>YouTube</span> Channels">Canales de <span>YouTube</span></h1>
-        <p class="section-sub" data-es="Aqui encontraras canales de youtube que sirven como complemento para el aprendizaje de ingles." data-en="Here you will find YouTube channels that serve as a complement to learning English.">
-          Aqui encontraras canales de youtube que sirven como complemento para el aprendizaje de ingles.
+        <span class="section-tag" data-es="🔗 Recomendaciones" data-en="🔗 Recommendations">🔗 Recomendaciones</span>
+        <h1 class="section-title" data-es="Recursos <span>Recomendados</span>" data-en="Recommended <span>Resources</span>">Recursos <span>Recomendados</span></h1>
+        <p class="section-sub" data-es="Aquí encontrarás canales de YouTube y páginas web recomendadas para complementar tu aprendizaje de inglés." data-en="Here you will find YouTube channels and recommended websites to complement your English learning.">
+          Aquí encontrarás canales de YouTube y páginas web recomendadas para complementar tu aprendizaje de inglés.
         </p>
       </div>
 
       <div class="ref-grid">
+        <a class="ref-card link-card" href="https://www.englishactivities.net/" target="_blank">
+          <div class="ref-icon">🌐</div>
+          <div class="ref-info">
+            <h4>English Activities</h4>
+            <p data-es="Actividades interactivas, ejercicios y recursos para practicar inglés en todos los niveles." data-en="Interactive activities, exercises and resources to practice English at all levels.">Actividades interactivas, ejercicios y recursos para practicar inglés en todos los niveles.</p>
+            <span class="ref-tag link-tag" data-es="Visitar sitio →" data-en="Visit site →">Visitar sitio →</span>
+          </div>
+        </a>
+
         <a class="ref-card link-card" href="https://www.youtube.com/@EnglishwithLucy" target="_blank">
           <div class="ref-icon">▶️</div>
           <div class="ref-info">
@@ -300,6 +297,7 @@
             <span class="ref-tag link-tag" data-es="Ver canal →" data-en="Visit channel →">Ver canal →</span>
           </div>
         </a>
+
         <a class="ref-card link-card" href="https://www.youtube.com/@EnglishAddict" target="_blank">
           <div class="ref-icon">▶️</div>
           <div class="ref-info">
